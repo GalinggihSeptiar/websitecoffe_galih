@@ -46,7 +46,7 @@ body{
 .btn{
     margin-top: 1rem;
     display: inline-block;
-    padding: 9rem 3rem;
+    padding: .9rem 3rem;
     font-size: 1.7rem;
     color: #fff;
     background: var(--main-color);
@@ -54,7 +54,7 @@ body{
 }
 
 .btn:hover{
-    letter-spacing: 2rem;
+    letter-spacing: .2rem;
 }
 
 .header{
@@ -102,7 +102,7 @@ body{
     display: none;
 }
 
-.header .serach-form{
+.header .search-form{
     position: absolute;
     top: 115%;
     right: 7%;
@@ -115,7 +115,11 @@ body{
     transform-origin: top;
 }
 
-.header .serach-form input{
+.header .search-form.active{
+    transform: scaleY(1);
+}
+
+.header .search-form input{
     height: 100%;
     width: 100%;
     font-size: 1.6rem;
@@ -124,14 +128,14 @@ body{
     text-transform: none;
 }
 
-.header .serach-form label{
+.header .search-form label{
     cursor: pointer;
     font-size: 2.2rem;
     margin-right: 1.5rem;
     color: var(--black);
 }
 
-.header .serach-form label:hover{
+.header .search-form label:hover{
     color: var(--main-color);
 }
 
@@ -143,6 +147,10 @@ body{
     width: 35rem;
     background: #fff;
     padding: 0 1.5rem;
+}
+
+.header .cart-items-container.active{
+    right: 0;
 }
 
 .header .cart-items-container .cart-item{
@@ -184,4 +192,45 @@ body{
 .header .cart-items-container .btn{
     width: 100%;
     text-align: center;
+}
+
+@media (max-width:991px){
+    html{
+        font-size: 55%;
+    }
+    .header{
+        padding: 1.5rem 2rem;
+    }
+}
+
+@media (max-width:768px){
+
+    #menu-btn{
+        display: inline-block;
+    }
+    .header .navbar{
+        position: absolute;
+        top:100%; right: -100%;
+        background: #fff;
+        width: 30rem;
+        height: calc(100vh - 9.5rem);
+    }
+    .header .navbar a{
+        color: var(--black);
+        display: block;
+        margin: 1.5rem;
+        padding: .5rem;
+        font-size: 2rem;
+    }
+    .header .search-form{
+        width: 90%;
+        right: 2rem;
+
+    }
+}
+
+@media (max-width:450px){
+    html{
+        font-size: 50%;
+    }
 }
